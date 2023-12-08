@@ -1,6 +1,3 @@
-// Daily Commenting everything excerise
-// Cpp Guessing Game
-
 #include <iostream>
 
 // The 'using namespace std;' directive allows standard library 
@@ -8,7 +5,7 @@
 using namespace std;
 
 // Function declarations | You must have this
-int game();
+int Game();
 int Win();
 int Lose();
 
@@ -17,10 +14,11 @@ int main()
 {
     cout << "Welcome to the Guessing Game Made in C++" <<endl;
     cout << "Click any key to continue ";
+    cout << endl;
     cin.get();
 
     // Calls the game function
-    game();
+    Game();
 
     // Return 0 to indicate successful program execution
     return 0;   
@@ -28,7 +26,7 @@ int main()
 }
 
 // Game Function
-int game()
+int Game()
 {
     // An int variable named secretNumber is holding the number 7
     int secretNumber = 7;
@@ -72,6 +70,7 @@ int game()
         }
 
     }
+    
     // The secret word was guess and the program continues to Win Function
     Win();
 
@@ -83,9 +82,30 @@ int game()
 // Win Function
 int Win()
 {
-
+    // A variable name choice1 which is an int
+    int choice1;
 
     cout << "You Win" << endl;
+    cout << "Would you like to play again?" <<endl;
+    cout << "Enter 1 if yes or 2 for No" <<endl;
+    
+    // This goes here to prevent a loop
+    cin >> choice1;
+    if(choice1 == 1)
+    {
+        main();
+    }
+    if(choice1 == 2)
+    {
+      cout << "Goodbye! Thanks for playing." << endl;
+      exit(0); // Exit the program with a status code of 0 (indicating a successful exit)      
+
+    }
+    else
+    {
+        cout <<"You Need to enter 1 or 2!" << endl;
+        Win();
+    }
 
     // Return 0 to indicate successful program execution
     return 0;
@@ -95,21 +115,21 @@ int Win()
 int Lose()
 {
     // Variable choice is of type int
-    int choice;
+    int choice2;
 
     cout << "You Lose" << endl;
 
     cout << "Would you like to play again?" <<endl;
     cout << "Enter 1 if yes or 2 for No" <<endl;
-    cin >> choice;
-    if(choice ==1)
+    cin >> choice2;
+    if(choice2 ==1)
     {
         cout << "Lets Start it Up!" << endl;
         cout << "============================" << endl;
         main();
 
     }
-    if (choice == 2) {
+    if (choice2 == 2) {
         cout << "Goodbye! Thanks for playing." << endl;
         exit(0); // Exit the program with a status code of 0 (indicating a successful exit)
     }
@@ -118,7 +138,6 @@ int Lose()
         cout <<"You Need to enter 1 or 2!" << endl;
         Lose();
     }
-
 
     // Return 0 to indicate successful program execution
     return 0;
